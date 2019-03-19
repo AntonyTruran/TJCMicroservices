@@ -1,0 +1,60 @@
+2019-03-19 16:02:19.116  INFO 1520 --- [main] com.qa.demo.TjCaccountApiApplication     : Starting TjCaccountApiApplication on STUDENT09 with PID 1520 (C:\Users\Admin\Documents\workspace-sts\TJCMicroservices\TJCAccountAPI\target\classes started by Admin in C:\Users\Admin\Documents\workspace-sts\TJCMicroservices\TJCAccountAPI)
+2019-03-19 16:02:19.118  INFO 1520 --- [main] com.qa.demo.TjCaccountApiApplication     : No active profile set, falling back to default profiles: default
+2019-03-19 16:02:19.504  INFO 1520 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-03-19 16:02:19.542  INFO 1520 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34ms. Found 1 repository interfaces.
+2019-03-19 16:02:19.739  INFO 1520 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1aa83f91] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-19 16:02:19.934  INFO 1520 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-03-19 16:02:19.949  INFO 1520 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-19 16:02:19.950  INFO 1520 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-19 16:02:19.954  INFO 1520 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_144\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jdk1.8.0_144/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_144/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_144/bin/../jre/lib/amd64;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\Users\Admin\external_applications\apache-maven-3.3.9/bin;C:\Program Files\Java\jdk1.8.0_144/bin;C:\Users\Admin\external_applications\sts-bundle\sts-3.9.7.RELEASE;;.]
+2019-03-19 16:02:20.011  INFO 1520 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-19 16:02:20.011  INFO 1520 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 867 ms
+2019-03-19 16:02:20.096  INFO 1520 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-03-19 16:02:20.150  INFO 1520 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-03-19 16:02:20.184  INFO 1520 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-03-19 16:02:20.279  INFO 1520 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-03-19 16:02:20.279  INFO 1520 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-03-19 16:02:20.353  INFO 1520 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-03-19 16:02:20.422  INFO 1520 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-03-19 16:02:20.755  INFO 1520 --- [main] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@51f18e31'
+2019-03-19 16:02:20.757  INFO 1520 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-03-19 16:02:20.934  WARN 1520 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-03-19 16:02:21.145  INFO 1520 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-19 16:02:21.146  INFO 1520 --- [main] com.qa.demo.TjCaccountApiApplication     : Started TjCaccountApiApplication in 2.232 seconds (JVM running for 2.544)
+2019-03-19 16:03:28.324  INFO 1520 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-03-19 16:03:28.326  INFO 1520 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-03-19 16:03:28.326  INFO 1520 --- [RMI TCP Connection(2)-127.0.0.1] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2019-03-19 16:03:28.331  INFO 1520 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-03-19 16:03:28.332  INFO 1520 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-03-19 16:03:43.546  INFO 4328 --- [main] com.qa.demo.TjCaccountApiApplication     : Starting TjCaccountApiApplication on STUDENT09 with PID 4328 (C:\Users\Admin\Documents\workspace-sts\TJCMicroservices\TJCAccountAPI\target\classes started by Admin in C:\Users\Admin\Documents\workspace-sts\TJCMicroservices\TJCAccountAPI)
+2019-03-19 16:03:43.548  INFO 4328 --- [main] com.qa.demo.TjCaccountApiApplication     : No active profile set, falling back to default profiles: default
+2019-03-19 16:03:43.932  INFO 4328 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-03-19 16:03:43.972  INFO 4328 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36ms. Found 1 repository interfaces.
+2019-03-19 16:03:44.170  INFO 4328 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$bf6c5a9a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-03-19 16:03:44.363  INFO 4328 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-03-19 16:03:44.378  INFO 4328 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-19 16:03:44.379  INFO 4328 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-19 16:03:44.383  INFO 4328 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_144\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jdk1.8.0_144/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_144/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_144/bin/../jre/lib/amd64;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\Users\Admin\external_applications\apache-maven-3.3.9/bin;C:\Program Files\Java\jdk1.8.0_144/bin;C:\Users\Admin\external_applications\sts-bundle\sts-3.9.7.RELEASE;;.]
+2019-03-19 16:03:44.439  INFO 4328 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-19 16:03:44.439  INFO 4328 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 867 ms
+2019-03-19 16:03:44.525  INFO 4328 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-03-19 16:03:44.583  INFO 4328 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-03-19 16:03:44.617  INFO 4328 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-03-19 16:03:44.701  INFO 4328 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
+2019-03-19 16:03:44.702  INFO 4328 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2019-03-19 16:03:44.777  INFO 4328 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-03-19 16:03:44.847  INFO 4328 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-03-19 16:03:45.185  INFO 4328 --- [main] o.h.t.schema.internal.SchemaCreatorImpl  : HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@4346808'
+2019-03-19 16:03:45.187  INFO 4328 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-03-19 16:03:45.365  WARN 4328 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-03-19 16:03:45.590  INFO 4328 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-03-19 16:03:45.591  INFO 4328 --- [main] com.qa.demo.TjCaccountApiApplication     : Started TjCaccountApiApplication in 2.248 seconds (JVM running for 2.563)
+2019-03-19 16:04:06.270  INFO 4328 --- [http-nio-8080-exec-7] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-19 16:04:06.271  INFO 4328 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-03-19 16:04:06.277  INFO 4328 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2019-03-19 16:04:06.289  WARN 4328 --- [http-nio-8080-exec-7] o.s.web.servlet.PageNotFound             : No mapping for GET /favicon.ico
+2019-03-19 16:08:29.178  INFO 4328 --- [http-nio-8080-exec-7] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory

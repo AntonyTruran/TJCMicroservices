@@ -14,7 +14,7 @@ public class Account {
 	@GeneratedValue
 	private long id;
 	private String firstName;
-	private String secondName;
+	private String surname;
 	private String accountNum;
 	
 	public String getFirstName() {
@@ -24,10 +24,10 @@ public class Account {
 		this.firstName = firstName;
 	}
 	public String getSecondName() {
-		return secondName;
+		return surname;
 	}
 	public void setSecondName(String secondName) {
-		this.secondName = secondName;
+		this.surname = secondName;
 	}
 	public String getAccountNum() {
 		return accountNum;
