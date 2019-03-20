@@ -16,30 +16,31 @@ import com.qa.demo.service.AccountService;
 
 @RestController
 public class AccountController {
-	
+
 	private AccountService accountService;
 	private AccountBuilder accountBuilder;
-	
+
 	public AccountController(AccountService accountService, AccountBuilder accountBuilder) {
 		this.accountService = accountService;
 		this.accountBuilder = accountBuilder;
 	}
-	
+
 	@PostMapping("/createAccount")
 	public void createAccount(String firstName, String lastName) {
 		Account account = new Account(firstName, lastName);
 		account.setAccountNum(numberGenerator());
 		this.accountService.createAccount(account);
 	}
-	
+
 	@GetMapping("/getAllAccounts")
 	public List<Account> getAccounts() {
 		return this.accountService.getAccounts();
 	}
-	
+
 	@GetMapping("/accountSearch")
-	public List<Account> accountSearch(String firstName, String lastName, String accountNum){
-		return this.accountService.accountSearch(accountBuilder.firstName(firstName).lastName(lastName).accountNum(accountNum).accountBuild());
+	public List<Account> accountSearch(String firstName, String lastName, String accountNum) {
+		return this.accountService.accountSearch(
+				accountBuilder.firstName(firstName).lastName(lastName).accountNum(accountNum).accountBuild());
 	}
 
 	@Autowired
@@ -47,13 +48,16 @@ public class AccountController {
 
 	@GetMapping("/hello")
 	public String hello() {
-		return rtb.build().exchange("HTTP://localhost:8081/hello", HttpMethod.GET,null,String.class).getBody();
+		return rtb.build().exchange("HTTP://localhost:8081/hello", HttpMethod.GET, null, String.class).getBody();
 	}
+
 	@GetMapping("/randomNumber")
 	public String numberGenerator() {
-		String accountNum = rtb.build().exchange("HTTP://localhost:8081/randomNumber", HttpMethod.GET,null,String.class).getBody();
+		String accountNum = rtb.build()
+				.exchange("HTTP://localhost:8081/randomNumber", HttpMethod.GET, null, String.class).getBody();
 		return accountNum;
 	}
+  
 	@GetMapping("/prizeDraw/{accountNum}")
 	public String haveYouWon(@PathVariable String accountNum) {
 		return rtb.build().exchange("HTTP://localhost:8082/prizeDraw/" + accountNum , HttpMethod.GET,null,String.class).getBody();

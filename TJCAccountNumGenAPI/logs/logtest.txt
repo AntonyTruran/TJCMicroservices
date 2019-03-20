@@ -1148,3 +1148,299 @@ Verify the connector's configuration, identify and stop any process that's liste
 2019-03-20 12:43:23.050  INFO 5992 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2019-03-20 12:43:23.051  INFO 5992 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2019-03-20 12:43:23.055  INFO 5992 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2019-03-20 12:59:55.975  INFO 3652 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : Starting TjcAccountNumGenApiApplication on STUDENT08 with PID 3652 (C:\Users\Admin\git\TJCMicroservices\TJCAccountNumGenAPI\target\classes started by Admin in C:\Users\Admin\git\TJCMicroservices\TJCAccountNumGenAPI)
+2019-03-20 12:59:55.990  INFO 3652 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : No active profile set, falling back to default profiles: default
+2019-03-20 12:59:56.565  INFO 3652 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-03-20 12:59:56.581  INFO 3652 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-20 12:59:56.581  INFO 3652 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-20 12:59:56.586  INFO 3652 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_144\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_144/bin/server;C:/Program Files/Java/jre1.8.0_144/bin;C:/Program Files/Java/jre1.8.0_144/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_144\bin;C:\Program Files\Git\cmd;C:\Users\Admin\Documents\apache-maven-3.3.9\bin;C:\Users\Admin\Documents\Spring\sts-3.9.7.RELEASE;;.]
+2019-03-20 12:59:56.634  INFO 3652 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-20 12:59:56.634  INFO 3652 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 612 ms
+2019-03-20 12:59:56.770  INFO 3652 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-20 12:59:56.880 ERROR 3652 --- [main] org.apache.catalina.util.LifecycleBase   : Failed to start component [Connector[HTTP/1.1-8081]]
+
+org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1008) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:226) [tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:259) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:197) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:311) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:164) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:552) [spring-context-5.1.5.RELEASE.jar:5.1.5.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248) [spring-boot-2.1.3.RELEASE.jar:2.1.3.RELEASE]
+	at com.qa.demo.TjcAccountNumGenApiApplication.main(TjcAccountNumGenApiApplication.java:16) [classes/:na]
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method) ~[na:1.8.0_144]
+	at sun.nio.ch.Net.bind(Net.java:433) ~[na:1.8.0_144]
+	at sun.nio.ch.Net.bind(Net.java:425) ~[na:1.8.0_144]
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223) ~[na:1.8.0_144]
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74) ~[na:1.8.0_144]
+	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:236) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1085) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1171) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:568) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1005) ~[tomcat-embed-core-9.0.16.jar:9.0.16]
+	... 14 common frames omitted
+
+2019-03-20 12:59:56.883  INFO 3652 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-03-20 12:59:56.891  INFO 3652 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-03-20 12:59:56.894 ERROR 3652 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8081 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8081, or configure this application to listen on another port.
+
+2019-03-20 12:59:56.896  INFO 3652 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-03-20 13:00:07.444  INFO 5992 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-03-20 13:00:07.446  INFO 5992 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-03-20 13:00:13.974  INFO 5816 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : Starting TjcAccountNumGenApiApplication on STUDENT08 with PID 5816 (C:\Users\Admin\git\TJCMicroservices\TJCAccountNumGenAPI\target\classes started by Admin in C:\Users\Admin\git\TJCMicroservices\TJCAccountNumGenAPI)
+2019-03-20 13:00:13.974  INFO 5816 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : No active profile set, falling back to default profiles: default
+2019-03-20 13:00:14.538  INFO 5816 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-03-20 13:00:14.548  INFO 5816 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-20 13:00:14.548  INFO 5816 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-20 13:00:14.564  INFO 5816 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_144\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_144/bin/server;C:/Program Files/Java/jre1.8.0_144/bin;C:/Program Files/Java/jre1.8.0_144/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_144\bin;C:\Program Files\Git\cmd;C:\Users\Admin\Documents\apache-maven-3.3.9\bin;C:\Users\Admin\Documents\Spring\sts-3.9.7.RELEASE;;.]
+2019-03-20 13:00:14.595  INFO 5816 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-20 13:00:14.595  INFO 5816 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 590 ms
+2019-03-20 13:00:14.736  INFO 5816 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-20 13:00:14.846  INFO 5816 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-03-20 13:00:14.846  INFO 5816 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : Started TjcAccountNumGenApiApplication in 1.063 seconds (JVM running for 1.355)
+2019-03-20 13:00:25.198  INFO 5816 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-20 13:00:25.198  INFO 5816 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-03-20 13:00:25.203  INFO 5816 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2019-03-20 13:01:04.189  INFO 5816 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-03-20 13:01:04.193  INFO 5816 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-03-20 14:16:54.691  INFO 5528 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : Starting TjcAccountNumGenApiApplication on STUDENT08 with PID 5528 (C:\Users\Admin\git\TJCMicroservices\TJCAccountNumGenAPI\target\classes started by Admin in C:\Users\Admin\git\TJCMicroservices\TJCAccountNumGenAPI)
+2019-03-20 14:16:54.691  INFO 5528 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : No active profile set, falling back to default profiles: default
+2019-03-20 14:16:56.344  INFO 5528 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-03-20 14:16:56.359  INFO 5528 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-20 14:16:56.359  INFO 5528 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-20 14:16:56.374  INFO 5528 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_144\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_144/bin/server;C:/Program Files/Java/jre1.8.0_144/bin;C:/Program Files/Java/jre1.8.0_144/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_144\bin;C:\Program Files\Git\cmd;C:\Users\Admin\Documents\apache-maven-3.3.9\bin;C:\Users\Admin\Documents\Spring\sts-3.9.7.RELEASE;;.]
+2019-03-20 14:16:57.583  INFO 5528 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-20 14:16:57.599  INFO 5528 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2876 ms
+2019-03-20 14:16:57.734  INFO 5528 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-20 14:16:57.883  INFO 5528 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-03-20 14:16:57.885  INFO 5528 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : Started TjcAccountNumGenApiApplication in 3.446 seconds (JVM running for 6.416)
+2019-03-20 14:17:34.026  INFO 5528 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-20 14:17:34.027  INFO 5528 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-03-20 14:17:34.030  INFO 5528 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2019-03-20 14:18:36.155  INFO 5528 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-03-20 14:18:36.157  INFO 5528 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-03-20 14:18:40.513  INFO 5716 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : Starting TjcAccountNumGenApiApplication on STUDENT08 with PID 5716 (C:\Users\Admin\git\TJCMicroservices\TJCAccountNumGenAPI\target\classes started by Admin in C:\Users\Admin\git\TJCMicroservices\TJCAccountNumGenAPI)
+2019-03-20 14:18:40.515  INFO 5716 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : No active profile set, falling back to default profiles: default
+2019-03-20 14:18:41.095  INFO 5716 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-03-20 14:18:41.103  INFO 5716 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-20 14:18:41.103  INFO 5716 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-20 14:18:41.119  INFO 5716 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_144\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_144/bin/server;C:/Program Files/Java/jre1.8.0_144/bin;C:/Program Files/Java/jre1.8.0_144/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_144\bin;C:\Program Files\Git\cmd;C:\Users\Admin\Documents\apache-maven-3.3.9\bin;C:\Users\Admin\Documents\Spring\sts-3.9.7.RELEASE;;.]
+2019-03-20 14:18:41.155  INFO 5716 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-20 14:18:41.155  INFO 5716 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 610 ms
+2019-03-20 14:18:41.281  INFO 5716 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-20 14:18:41.391  INFO 5716 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-03-20 14:18:41.406  INFO 5716 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : Started TjcAccountNumGenApiApplication in 1.078 seconds (JVM running for 1.373)
+2019-03-20 14:19:22.955  INFO 5716 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-03-20 14:19:22.960  INFO 5716 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-03-20 14:19:25.717  INFO 3272 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : Starting TjcAccountNumGenApiApplication on STUDENT08 with PID 3272 (C:\Users\Admin\git\TJCMicroservices\TJCAccountNumGenAPI\target\classes started by Admin in C:\Users\Admin\git\TJCMicroservices\TJCAccountNumGenAPI)
+2019-03-20 14:19:25.717  INFO 3272 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : No active profile set, falling back to default profiles: default
+2019-03-20 14:19:26.313  INFO 3272 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-03-20 14:19:26.317  INFO 3272 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-20 14:19:26.317  INFO 3272 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-20 14:19:26.332  INFO 3272 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_144\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_144/bin/server;C:/Program Files/Java/jre1.8.0_144/bin;C:/Program Files/Java/jre1.8.0_144/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_144\bin;C:\Program Files\Git\cmd;C:\Users\Admin\Documents\apache-maven-3.3.9\bin;C:\Users\Admin\Documents\Spring\sts-3.9.7.RELEASE;;.]
+2019-03-20 14:19:26.364  INFO 3272 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-20 14:19:26.364  INFO 3272 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 594 ms
+2019-03-20 14:19:26.504  INFO 3272 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-20 14:19:26.614  INFO 3272 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-03-20 14:19:26.614  INFO 3272 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : Started TjcAccountNumGenApiApplication in 1.081 seconds (JVM running for 1.381)
+2019-03-20 14:19:35.702  INFO 3272 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-20 14:19:35.702  INFO 3272 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-03-20 14:19:35.706  INFO 3272 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2019-03-20 14:21:22.035  INFO 3272 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-03-20 14:21:22.038  INFO 3272 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-03-20 14:21:30.814  INFO 304 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : Starting TjcAccountNumGenApiApplication on STUDENT08 with PID 304 (C:\Users\Admin\git\TJCMicroservices\TJCAccountNumGenAPI\target\classes started by Admin in C:\Users\Admin\git\TJCMicroservices\TJCAccountNumGenAPI)
+2019-03-20 14:21:30.814  INFO 304 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : No active profile set, falling back to default profiles: default
+2019-03-20 14:21:31.455  INFO 304 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-03-20 14:21:31.458  INFO 304 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-20 14:21:31.458  INFO 304 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-20 14:21:31.474  INFO 304 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_144\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_144/bin/server;C:/Program Files/Java/jre1.8.0_144/bin;C:/Program Files/Java/jre1.8.0_144/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_144\bin;C:\Program Files\Git\cmd;C:\Users\Admin\Documents\apache-maven-3.3.9\bin;C:\Users\Admin\Documents\Spring\sts-3.9.7.RELEASE;;.]
+2019-03-20 14:21:31.526  INFO 304 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-20 14:21:31.526  INFO 304 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 666 ms
+2019-03-20 14:21:31.668  INFO 304 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-20 14:21:31.785  INFO 304 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-03-20 14:21:31.788  INFO 304 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : Started TjcAccountNumGenApiApplication in 1.174 seconds (JVM running for 1.476)
+2019-03-20 14:21:34.545  INFO 304 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-20 14:21:34.545  INFO 304 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-03-20 14:21:34.550  INFO 304 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2019-03-20 14:26:15.891  INFO 304 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-03-20 14:26:15.896  INFO 304 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-03-20 14:26:22.895  INFO 3652 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : Starting TjcAccountNumGenApiApplication on STUDENT08 with PID 3652 (C:\Users\Admin\git\TJCMicroservices\TJCAccountNumGenAPI\target\classes started by Admin in C:\Users\Admin\git\TJCMicroservices\TJCAccountNumGenAPI)
+2019-03-20 14:26:22.895  INFO 3652 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : No active profile set, falling back to default profiles: default
+2019-03-20 14:26:23.565  INFO 3652 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-03-20 14:26:23.580  INFO 3652 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-20 14:26:23.580  INFO 3652 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-20 14:26:23.584  INFO 3652 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_144\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_144/bin/server;C:/Program Files/Java/jre1.8.0_144/bin;C:/Program Files/Java/jre1.8.0_144/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_144\bin;C:\Program Files\Git\cmd;C:\Users\Admin\Documents\apache-maven-3.3.9\bin;C:\Users\Admin\Documents\Spring\sts-3.9.7.RELEASE;;.]
+2019-03-20 14:26:23.630  INFO 3652 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-20 14:26:23.630  INFO 3652 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 688 ms
+2019-03-20 14:26:23.773  INFO 3652 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-20 14:26:23.894  INFO 3652 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-03-20 14:26:23.896  INFO 3652 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : Started TjcAccountNumGenApiApplication in 1.207 seconds (JVM running for 1.526)
+2019-03-20 14:26:43.563  INFO 3652 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-20 14:26:43.563  INFO 3652 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-03-20 14:26:43.567  INFO 3652 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2019-03-20 14:30:06.142  INFO 3652 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-03-20 14:30:06.144  INFO 3652 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-03-20 14:30:12.151  INFO 5652 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : Starting TjcAccountNumGenApiApplication on STUDENT08 with PID 5652 (C:\Users\Admin\git\TJCMicroservices\TJCAccountNumGenAPI\target\classes started by Admin in C:\Users\Admin\git\TJCMicroservices\TJCAccountNumGenAPI)
+2019-03-20 14:30:12.153  INFO 5652 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : No active profile set, falling back to default profiles: default
+2019-03-20 14:30:12.782  INFO 5652 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-03-20 14:30:12.799  INFO 5652 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-20 14:30:12.799  INFO 5652 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-20 14:30:12.803  INFO 5652 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_144\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_144/bin/server;C:/Program Files/Java/jre1.8.0_144/bin;C:/Program Files/Java/jre1.8.0_144/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_144\bin;C:\Program Files\Git\cmd;C:\Users\Admin\Documents\apache-maven-3.3.9\bin;C:\Users\Admin\Documents\Spring\sts-3.9.7.RELEASE;;.]
+2019-03-20 14:30:12.851  INFO 5652 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-20 14:30:12.851  INFO 5652 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 659 ms
+2019-03-20 14:30:12.988  INFO 5652 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-20 14:30:13.141  INFO 5652 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-03-20 14:30:13.145  INFO 5652 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : Started TjcAccountNumGenApiApplication in 1.215 seconds (JVM running for 1.538)
+2019-03-20 14:30:16.478  INFO 5652 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-20 14:30:16.478  INFO 5652 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-03-20 14:30:16.482  INFO 5652 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2019-03-20 14:30:59.518  INFO 5652 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-03-20 14:30:59.535  INFO 5652 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-03-20 14:31:05.080  INFO 4856 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : Starting TjcAccountNumGenApiApplication on STUDENT08 with PID 4856 (C:\Users\Admin\git\TJCMicroservices\TJCAccountNumGenAPI\target\classes started by Admin in C:\Users\Admin\git\TJCMicroservices\TJCAccountNumGenAPI)
+2019-03-20 14:31:05.095  INFO 4856 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : No active profile set, falling back to default profiles: default
+2019-03-20 14:31:05.705  INFO 4856 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-03-20 14:31:05.712  INFO 4856 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-20 14:31:05.712  INFO 4856 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-20 14:31:05.727  INFO 4856 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_144\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_144/bin/server;C:/Program Files/Java/jre1.8.0_144/bin;C:/Program Files/Java/jre1.8.0_144/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_144\bin;C:\Program Files\Git\cmd;C:\Users\Admin\Documents\apache-maven-3.3.9\bin;C:\Users\Admin\Documents\Spring\sts-3.9.7.RELEASE;;.]
+2019-03-20 14:31:05.778  INFO 4856 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-20 14:31:05.779  INFO 4856 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 652 ms
+2019-03-20 14:31:05.922  INFO 4856 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-20 14:31:06.078  INFO 4856 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-03-20 14:31:06.081  INFO 4856 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : Started TjcAccountNumGenApiApplication in 1.22 seconds (JVM running for 1.539)
+2019-03-20 14:31:47.853  INFO 4856 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-20 14:31:47.854  INFO 4856 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-03-20 14:31:47.857  INFO 4856 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2019-03-20 14:36:04.251  INFO 4856 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-03-20 14:36:04.254  INFO 4856 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-03-20 14:36:07.586  INFO 3464 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : Starting TjcAccountNumGenApiApplication on STUDENT08 with PID 3464 (C:\Users\Admin\git\TJCMicroservices\TJCAccountNumGenAPI\target\classes started by Admin in C:\Users\Admin\git\TJCMicroservices\TJCAccountNumGenAPI)
+2019-03-20 14:36:07.588  INFO 3464 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : No active profile set, falling back to default profiles: default
+2019-03-20 14:36:08.174  INFO 3464 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-03-20 14:36:08.181  INFO 3464 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-20 14:36:08.181  INFO 3464 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-20 14:36:08.197  INFO 3464 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_144\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_144/bin/server;C:/Program Files/Java/jre1.8.0_144/bin;C:/Program Files/Java/jre1.8.0_144/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_144\bin;C:\Program Files\Git\cmd;C:\Users\Admin\Documents\apache-maven-3.3.9\bin;C:\Users\Admin\Documents\Spring\sts-3.9.7.RELEASE;;.]
+2019-03-20 14:36:08.244  INFO 3464 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-20 14:36:08.244  INFO 3464 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 620 ms
+2019-03-20 14:36:08.393  INFO 3464 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-20 14:36:08.518  INFO 3464 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-03-20 14:36:08.518  INFO 3464 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : Started TjcAccountNumGenApiApplication in 1.126 seconds (JVM running for 1.442)
+2019-03-20 14:36:12.924  INFO 3464 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-20 14:36:12.925  INFO 3464 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-03-20 14:36:12.928  INFO 3464 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2019-03-20 14:40:26.269  INFO 3464 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-03-20 14:40:26.271  INFO 3464 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-03-20 14:40:31.893  INFO 5080 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : Starting TjcAccountNumGenApiApplication on STUDENT08 with PID 5080 (C:\Users\Admin\git\TJCMicroservices\TJCAccountNumGenAPI\target\classes started by Admin in C:\Users\Admin\git\TJCMicroservices\TJCAccountNumGenAPI)
+2019-03-20 14:40:31.893  INFO 5080 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : No active profile set, falling back to default profiles: default
+2019-03-20 14:40:32.488  INFO 5080 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-03-20 14:40:32.492  INFO 5080 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-20 14:40:32.492  INFO 5080 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-20 14:40:32.507  INFO 5080 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_144\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_144/bin/server;C:/Program Files/Java/jre1.8.0_144/bin;C:/Program Files/Java/jre1.8.0_144/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_144\bin;C:\Program Files\Git\cmd;C:\Users\Admin\Documents\apache-maven-3.3.9\bin;C:\Users\Admin\Documents\Spring\sts-3.9.7.RELEASE;;.]
+2019-03-20 14:40:32.539  INFO 5080 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-20 14:40:32.539  INFO 5080 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 615 ms
+2019-03-20 14:40:32.689  INFO 5080 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-20 14:40:32.831  INFO 5080 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-03-20 14:40:32.831  INFO 5080 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : Started TjcAccountNumGenApiApplication in 1.126 seconds (JVM running for 1.419)
+2019-03-20 14:40:39.768  INFO 5080 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-20 14:40:39.769  INFO 5080 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-03-20 14:40:39.773  INFO 5080 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2019-03-20 14:41:47.720  INFO 5080 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-03-20 14:41:47.734  INFO 5080 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-03-20 14:41:54.520  INFO 4800 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : Starting TjcAccountNumGenApiApplication on STUDENT08 with PID 4800 (C:\Users\Admin\git\TJCMicroservices\TJCAccountNumGenAPI\target\classes started by Admin in C:\Users\Admin\git\TJCMicroservices\TJCAccountNumGenAPI)
+2019-03-20 14:41:54.520  INFO 4800 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : No active profile set, falling back to default profiles: default
+2019-03-20 14:41:55.201  INFO 4800 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-03-20 14:41:55.213  INFO 4800 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-20 14:41:55.213  INFO 4800 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-20 14:41:55.213  INFO 4800 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_144\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_144/bin/server;C:/Program Files/Java/jre1.8.0_144/bin;C:/Program Files/Java/jre1.8.0_144/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_144\bin;C:\Program Files\Git\cmd;C:\Users\Admin\Documents\apache-maven-3.3.9\bin;C:\Users\Admin\Documents\Spring\sts-3.9.7.RELEASE;;.]
+2019-03-20 14:41:55.278  INFO 4800 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-20 14:41:55.278  INFO 4800 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 712 ms
+2019-03-20 14:41:55.412  INFO 4800 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-20 14:41:55.529  INFO 4800 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-03-20 14:41:55.531  INFO 4800 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : Started TjcAccountNumGenApiApplication in 1.215 seconds (JVM running for 1.557)
+2019-03-20 14:41:57.641  INFO 4800 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-20 14:41:57.641  INFO 4800 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-03-20 14:41:57.645  INFO 4800 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2019-03-20 14:43:30.972  INFO 4800 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-03-20 14:43:30.982  INFO 4800 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-03-20 14:43:34.737  INFO 4300 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : Starting TjcAccountNumGenApiApplication on STUDENT08 with PID 4300 (C:\Users\Admin\git\TJCMicroservices\TJCAccountNumGenAPI\target\classes started by Admin in C:\Users\Admin\git\TJCMicroservices\TJCAccountNumGenAPI)
+2019-03-20 14:43:34.737  INFO 4300 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : No active profile set, falling back to default profiles: default
+2019-03-20 14:43:35.316  INFO 4300 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-03-20 14:43:35.324  INFO 4300 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-20 14:43:35.324  INFO 4300 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-20 14:43:35.340  INFO 4300 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_144\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_144/bin/server;C:/Program Files/Java/jre1.8.0_144/bin;C:/Program Files/Java/jre1.8.0_144/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_144\bin;C:\Program Files\Git\cmd;C:\Users\Admin\Documents\apache-maven-3.3.9\bin;C:\Users\Admin\Documents\Spring\sts-3.9.7.RELEASE;;.]
+2019-03-20 14:43:35.387  INFO 4300 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-20 14:43:35.387  INFO 4300 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 615 ms
+2019-03-20 14:43:35.512  INFO 4300 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-20 14:43:35.621  INFO 4300 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-03-20 14:43:35.621  INFO 4300 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : Started TjcAccountNumGenApiApplication in 1.086 seconds (JVM running for 1.389)
+2019-03-20 14:43:45.800  INFO 4300 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-03-20 14:43:45.805  INFO 4300 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-03-20 14:43:48.158  INFO 3376 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : Starting TjcAccountNumGenApiApplication on STUDENT08 with PID 3376 (C:\Users\Admin\git\TJCMicroservices\TJCAccountNumGenAPI\target\classes started by Admin in C:\Users\Admin\git\TJCMicroservices\TJCAccountNumGenAPI)
+2019-03-20 14:43:48.158  INFO 3376 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : No active profile set, falling back to default profiles: default
+2019-03-20 14:43:48.753  INFO 3376 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-03-20 14:43:48.769  INFO 3376 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-20 14:43:48.770  INFO 3376 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-20 14:43:48.774  INFO 3376 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_144\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_144/bin/server;C:/Program Files/Java/jre1.8.0_144/bin;C:/Program Files/Java/jre1.8.0_144/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_144\bin;C:\Program Files\Git\cmd;C:\Users\Admin\Documents\apache-maven-3.3.9\bin;C:\Users\Admin\Documents\Spring\sts-3.9.7.RELEASE;;.]
+2019-03-20 14:43:48.823  INFO 3376 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-20 14:43:48.824  INFO 3376 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 634 ms
+2019-03-20 14:43:48.963  INFO 3376 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-20 14:43:49.080  INFO 3376 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-03-20 14:43:49.080  INFO 3376 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : Started TjcAccountNumGenApiApplication in 1.124 seconds (JVM running for 1.42)
+2019-03-20 14:43:53.282  INFO 3376 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-20 14:43:53.282  INFO 3376 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-03-20 14:43:53.286  INFO 3376 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2019-03-20 14:46:23.081  INFO 3376 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-03-20 14:46:23.085  INFO 3376 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-03-20 14:46:29.206  INFO 1884 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : Starting TjcAccountNumGenApiApplication on STUDENT08 with PID 1884 (C:\Users\Admin\git\TJCMicroservices\TJCAccountNumGenAPI\target\classes started by Admin in C:\Users\Admin\git\TJCMicroservices\TJCAccountNumGenAPI)
+2019-03-20 14:46:29.206  INFO 1884 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : No active profile set, falling back to default profiles: default
+2019-03-20 14:46:29.866  INFO 1884 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-03-20 14:46:29.872  INFO 1884 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-20 14:46:29.872  INFO 1884 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-20 14:46:29.887  INFO 1884 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_144\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_144/bin/server;C:/Program Files/Java/jre1.8.0_144/bin;C:/Program Files/Java/jre1.8.0_144/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_144\bin;C:\Program Files\Git\cmd;C:\Users\Admin\Documents\apache-maven-3.3.9\bin;C:\Users\Admin\Documents\Spring\sts-3.9.7.RELEASE;;.]
+2019-03-20 14:46:29.934  INFO 1884 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-20 14:46:29.934  INFO 1884 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 665 ms
+2019-03-20 14:46:30.117  INFO 1884 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-20 14:46:30.257  INFO 1884 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-03-20 14:46:30.260  INFO 1884 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : Started TjcAccountNumGenApiApplication in 1.273 seconds (JVM running for 1.606)
+2019-03-20 14:46:33.853  INFO 1884 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-20 14:46:33.853  INFO 1884 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-03-20 14:46:33.857  INFO 1884 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2019-03-20 14:48:09.191  INFO 1884 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-03-20 14:48:09.207  INFO 1884 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-03-20 14:48:11.902  INFO 3908 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : Starting TjcAccountNumGenApiApplication on STUDENT08 with PID 3908 (C:\Users\Admin\git\TJCMicroservices\TJCAccountNumGenAPI\target\classes started by Admin in C:\Users\Admin\git\TJCMicroservices\TJCAccountNumGenAPI)
+2019-03-20 14:48:11.905  INFO 3908 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : No active profile set, falling back to default profiles: default
+2019-03-20 14:48:12.493  INFO 3908 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-03-20 14:48:12.500  INFO 3908 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-20 14:48:12.500  INFO 3908 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.16]
+2019-03-20 14:48:12.515  INFO 3908 --- [main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_144\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_144/bin/server;C:/Program Files/Java/jre1.8.0_144/bin;C:/Program Files/Java/jre1.8.0_144/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.8.0_144\bin;C:\Program Files\Git\cmd;C:\Users\Admin\Documents\apache-maven-3.3.9\bin;C:\Users\Admin\Documents\Spring\sts-3.9.7.RELEASE;;.]
+2019-03-20 14:48:12.562  INFO 3908 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-20 14:48:12.562  INFO 3908 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 623 ms
+2019-03-20 14:48:12.714  INFO 3908 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-20 14:48:12.832  INFO 3908 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-03-20 14:48:12.847  INFO 3908 --- [main] c.q.demo.TjcAccountNumGenApiApplication  : Started TjcAccountNumGenApiApplication in 1.142 seconds (JVM running for 1.44)
+2019-03-20 14:48:17.504  INFO 3908 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-20 14:48:17.504  INFO 3908 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-03-20 14:48:17.508  INFO 3908 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2019-03-20 14:49:25.915  INFO 3908 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-03-20 14:49:25.921  INFO 3908 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'

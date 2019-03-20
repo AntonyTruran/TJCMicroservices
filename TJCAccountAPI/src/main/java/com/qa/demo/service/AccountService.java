@@ -1,5 +1,6 @@
 package com.qa.demo.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,20 +18,16 @@ public class AccountService {
 		this.accountRepo = accountRepo;
 	}
 
-	public void createAccount(Account account) {	
+	public void createAccount(Account account) {
 		this.accountRepo.save(account);
 	}
-	
+
 	public List<Account> getAccounts() {
-		return this.accountRepo.findAll();		
+		return this.accountRepo.findAll();
 	}
-	
-	public List<Account> accountSearch(Account account){
-		return this.accountRepo.findAll().stream().filter(x -> 
-		 x.getFirstName().contentEquals(account.getFirstName()) ||
-	     x.getLastName().contentEquals(account.getLastName()) ||
-		 x.getAccountNum().contentEquals(account.getAccountNum()))
-		.collect(Collectors.toList());
+
+	public List<Account> accountSearch(Account account) {
+		return this.accountRepo.findAll().stream().filter(x -> x.matches(account)).collect(Collectors.toList());
 	}
 
 }
