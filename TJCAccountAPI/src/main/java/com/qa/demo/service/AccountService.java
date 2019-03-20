@@ -1,6 +1,7 @@
 package com.qa.demo.service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
@@ -22,6 +23,14 @@ public class AccountService {
 	
 	public List<Account> getAccounts() {
 		return this.accountRepo.findAll();		
+	}
+	
+	public List<Account> accountSearch(Account account){
+		return this.accountRepo.findAll().stream().filter(x -> 
+		 x.getFirstName().contentEquals(account.getFirstName()) ||
+	     x.getLastName().contentEquals(account.getLastName()) ||
+		 x.getAccountNum().contentEquals(account.getAccountNum()))
+		.collect(Collectors.toList());
 	}
 
 }
