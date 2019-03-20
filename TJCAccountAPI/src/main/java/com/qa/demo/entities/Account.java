@@ -11,7 +11,7 @@ public class Account {
 		this.firstName = firstName;
 		this.lastName = lastName;
 	}
-	
+
 	public Account(String firstName, String lastName, String accountNum) {
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -52,9 +52,17 @@ public class Account {
 	public void setAccountNum(String accountNum) {
 		this.accountNum = accountNum;
 	}
-	
+
 	public long getID() {
 		return id;
 	}
 
+	public boolean matches(Account account) {
+		return (this.getFirstName().contentEquals(account.getFirstName())
+				|| account.getFirstName().contentEquals("N/A"))
+				&& (this.getLastName().contentEquals(account.getLastName())
+						|| account.getLastName().contentEquals("N/A"))
+				&& (this.getAccountNum().contentEquals(account.getAccountNum())
+						|| account.getAccountNum().contentEquals("N/A"));
+	}
 }
