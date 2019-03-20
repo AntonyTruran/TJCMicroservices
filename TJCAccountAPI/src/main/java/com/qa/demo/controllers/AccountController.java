@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpMethod;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
 import com.qa.demo.AccountBuilder;
 import com.qa.demo.entities.Account;
@@ -57,9 +57,9 @@ public class AccountController {
 				.exchange("HTTP://localhost:8081/randomNumber", HttpMethod.GET, null, String.class).getBody();
 		return accountNum;
 	}
-
-	@GetMapping("/prizeDraw")
-	public String haveYouWon() {
-		return rtb.build().exchange("HTTP://localhost:8082/prizeDraw", HttpMethod.GET, null, String.class).getBody();
+  
+	@GetMapping("/prizeDraw/{accountNum}")
+	public String haveYouWon(@PathVariable String accountNum) {
+		return rtb.build().exchange("HTTP://localhost:8082/prizeDraw/" + accountNum , HttpMethod.GET,null,String.class).getBody();
 	}
 }
