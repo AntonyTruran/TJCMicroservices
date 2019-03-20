@@ -29,8 +29,4 @@ public class TjcAccountNumGenApiApplication {
 		}
 		return generatedNumber;
 	}
-	@GetMapping("/hello")
-	public String helloWorld() {
-		return "Hello World";
-	}
 }
