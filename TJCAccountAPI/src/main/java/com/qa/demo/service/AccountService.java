@@ -16,7 +16,8 @@ public class AccountService {
 		this.accountRepo = accountRepo;
 	}
 
-	public void createAccount(Account account) {
+	public void createAccount(String firstname, String lastname, String accountNumber) {	
+		Account account = new Account(firstname,lastname,accountNumber);
 		this.accountRepo.save(account);
 	}
 	

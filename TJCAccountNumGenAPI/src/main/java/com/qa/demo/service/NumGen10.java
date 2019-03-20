@@ -31,7 +31,7 @@ public class NumGen10 implements INumGen {
 	public String genNum() {
 		String number = "";
 		int randNumber;
-		for (int i=0; i<10;i++) {
+		for (int i=1; i<10;i++) {
 			 randNumber = new Random().nextInt(9) + 0;
 			number += randNumber;
 		}
