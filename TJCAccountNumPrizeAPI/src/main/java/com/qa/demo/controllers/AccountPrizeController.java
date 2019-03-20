@@ -11,10 +11,10 @@ public class AccountPrizeController {
 	public String drawPrize(@PathVariable("accountNum") String accountNum) {
 		System.out.println(accountNum);
 		switch (accountNum.charAt(0)) {
-		case 'a': {
+		case 97: {
 			return "Unfortunately On This Occasssion You Have Not Won A Prize.";
 		}
-		case 'b': {
+		case 98: {
 			switch (accountNum.length()) {
 			case 6: {
 				return "You Have Won $50";
@@ -27,7 +27,7 @@ public class AccountPrizeController {
 			}
 			}
 		}
-		case 'c': {
+		case 99: {
 			switch (accountNum.length()) {
 			case 6: {
 				return "You Have Won $100";
