@@ -5,9 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpMethod;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.qa.demo.AccountBuilder;
@@ -15,6 +17,7 @@ import com.qa.demo.entities.Account;
 import com.qa.demo.service.AccountService;
 
 @RestController
+@CrossOrigin
 public class AccountController {
 	
 	private AccountService accountService;
@@ -26,18 +29,20 @@ public class AccountController {
 	}
 	
 	@PostMapping("/createAccount")
-	public void createAccount(String firstName, String lastName) {
-		Account account = new Account(firstName, lastName);
+	
+	public void createAccount(@RequestBody Account account) {
 		account.setAccountNum(numberGenerator());
 		this.accountService.createAccount(account);
 	}
 	
 	@GetMapping("/getAllAccounts")
+	
 	public List<Account> getAccounts() {
 		return this.accountService.getAccounts();
 	}
 	
 	@GetMapping("/accountSearch")
+
 	public List<Account> accountSearch(String firstName, String lastName, String accountNum){
 		return this.accountService.accountSearch(accountBuilder.firstName(firstName).lastName(lastName).accountNum(accountNum).accountBuild());
 	}
