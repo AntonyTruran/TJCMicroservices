@@ -4,16 +4,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
-
 @Entity
 public class Account {
 	
-	public Account(String firstName, String surname) {
+	public Account(String firstName, String lastName) {
 		super();
 		this.firstName = firstName;
-		this.surname = surname;
+		this.lastName = lastName;
 	}
 	
 	public Account() {
@@ -23,7 +20,7 @@ public class Account {
 	@GeneratedValue
 	private long id;
 	private String firstName;
-	private String surname;
+	private String lastName;
 	private String accountNum;
 	
 	public String getFirstName() {
@@ -33,10 +30,10 @@ public class Account {
 		this.firstName = firstName;
 	}
 	public String getSecondName() {
-		return surname;
+		return lastName;
 	}
 	public void setSecondName(String surname) {
-		this.surname = surname;
+		this.lastName = surname;
 	}
 	public String getAccountNum() {
 		return accountNum;

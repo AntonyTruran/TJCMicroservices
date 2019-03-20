@@ -21,7 +21,6 @@ public class AccountController {
 	}
 
 	private AccountService accountService;
-	private RestTemplate restTemplate;
 	
 	@PostMapping("/createAccount")
 	public void createAccount(String firstName, String lastName) {
