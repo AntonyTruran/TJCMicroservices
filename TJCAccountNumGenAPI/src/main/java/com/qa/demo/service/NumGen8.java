@@ -29,7 +29,7 @@ public class NumGen8 implements INumGen {
 
 	@Override
 	public String genNum() {
-		int randNumber = new Random().nextInt(99999999) + 10000000;
+		int randNumber = new Random().nextInt(9999999) + 1000000;
 		accountString=addChar()+randNumber;
 		return accountString;
 	}

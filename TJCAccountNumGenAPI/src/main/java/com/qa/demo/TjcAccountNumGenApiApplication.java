@@ -28,7 +28,7 @@ public class TjcAccountNumGenApiApplication {
 		} else if (option == 2) {
 			generatedNumber = ac.getBean("genNum3").toString();
 		}
-		return "hello"+generatedNumber;
+		return generatedNumber;
 	}
 	@GetMapping("/hello")
 	public String helloWorld() {

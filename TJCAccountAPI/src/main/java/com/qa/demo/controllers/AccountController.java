@@ -24,8 +24,8 @@ public class AccountController {
 	private RestTemplate restTemplate;
 	
 	@PostMapping("/createAccount")
-	public void createAccount(Account account) {
-		this.accountService.createAccount(account);
+	public void createAccount(String firstname, String lastname) {
+		this.accountService.createAccount(firstname, lastname, numberGenerator());
 	}
 	
 	@GetMapping("/getAccount")
@@ -42,7 +42,12 @@ public class AccountController {
 	}
 	@GetMapping("/randomNumber")
 	public String numberGenerator() {
-		return rtb.build().exchange("HTTP://localhost:8081/randomNumber", HttpMethod.GET,null,String.class).getBody();
+		String accountNumber = rtb.build().exchange("HTTP://localhost:8081/randomNumber", HttpMethod.GET,null,String.class).getBody();
+		return accountNumber;
+	}
+	@GetMapping("/prizeDraw")
+	public String haveYouWon() {
+		return rtb.build().exchange("HTTP://localhost:8082/prizeDraw", HttpMethod.GET,null,String.class).getBody();
 	}
 	
 }

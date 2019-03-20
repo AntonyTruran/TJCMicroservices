@@ -10,6 +10,12 @@ import org.springframework.stereotype.Component;
 @Entity
 public class Account {
 	
+	public Account(String firstName, String surname, String accountNum) {
+		super();
+		this.firstName = firstName;
+		this.surname = surname;
+		this.accountNum = accountNum;
+	}
 	@Id
 	@GeneratedValue
 	private long id;

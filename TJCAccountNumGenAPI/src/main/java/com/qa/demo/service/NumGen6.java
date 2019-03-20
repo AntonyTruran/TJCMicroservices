@@ -28,7 +28,7 @@ public class NumGen6 implements INumGen {
 
 	@Override
 	public String genNum() {
-		int randNumber = new Random().nextInt(999999) + 100000;
+		int randNumber = new Random().nextInt(99999) + 10000;
 		accountString=addChar()+randNumber;
 		return accountString;
 	}
