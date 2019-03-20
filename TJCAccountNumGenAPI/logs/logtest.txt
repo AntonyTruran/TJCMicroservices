@@ -960,3 +960,8 @@ Action:
 Verify the connector's configuration, identify and stop any process that's listening on port 8081, or configure this application to listen on another port.
 
 2019-03-20 10:39:22.734  INFO 1456 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-03-20 11:32:39.423  INFO 5368 --- [main] .q.d.TjcAccountNumGenApiApplicationTests : Starting TjcAccountNumGenApiApplicationTests on STUDENT08 with PID 5368 (started by Admin in C:\Users\Admin\git\TJCMicroservices\TJCAccountNumGenAPI)
+2019-03-20 11:32:39.425  INFO 5368 --- [main] .q.d.TjcAccountNumGenApiApplicationTests : No active profile set, falling back to default profiles: default
+2019-03-20 11:32:40.473  INFO 5368 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-03-20 11:32:40.654  INFO 5368 --- [main] .q.d.TjcAccountNumGenApiApplicationTests : Started TjcAccountNumGenApiApplicationTests in 1.438 seconds (JVM running for 2.024)
+2019-03-20 11:32:40.837  INFO 5368 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
