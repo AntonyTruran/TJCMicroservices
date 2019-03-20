@@ -26,8 +26,8 @@ public class Account {
 	public String getSecondName() {
 		return surname;
 	}
-	public void setSecondName(String secondName) {
-		this.surname = secondName;
+	public void setSecondName(String surname) {
+		this.surname = surname;
 	}
 	public String getAccountNum() {
 		return accountNum;
