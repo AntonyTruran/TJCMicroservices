@@ -24,8 +24,10 @@ public class AccountController {
 	private RestTemplate restTemplate;
 	
 	@PostMapping("/createAccount")
-	public void createAccount(String firstname, String lastname) {
-		this.accountService.createAccount(firstname, lastname, numberGenerator());
+	public void createAccount(String firstName, String lastName) {
+		Account account = new Account(firstName, lastName);
+		account.setAccountNum(numberGenerator());
+		this.accountService.createAccount(account);
 	}
 	
 	@GetMapping("/getAccount")
@@ -49,5 +51,4 @@ public class AccountController {
 	public String haveYouWon() {
 		return rtb.build().exchange("HTTP://localhost:8082/prizeDraw", HttpMethod.GET,null,String.class).getBody();
 	}
-	
 }
