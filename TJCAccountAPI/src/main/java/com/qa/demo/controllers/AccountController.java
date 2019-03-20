@@ -10,17 +10,20 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.qa.demo.AccountBuilder;
 import com.qa.demo.entities.Account;
 import com.qa.demo.service.AccountService;
 
 @RestController
 public class AccountController {
-
-	public AccountController(AccountService accountService) {
-		this.accountService = accountService;
-	}
-
+	
 	private AccountService accountService;
+	private AccountBuilder accountBuilder;
+	
+	public AccountController(AccountService accountService, AccountBuilder accountBuilder) {
+		this.accountService = accountService;
+		this.accountBuilder = accountBuilder;
+	}
 	
 	@PostMapping("/createAccount")
 	public void createAccount(String firstName, String lastName) {
@@ -29,11 +32,16 @@ public class AccountController {
 		this.accountService.createAccount(account);
 	}
 	
-	@GetMapping("/getAccount")
+	@GetMapping("/getAllAccounts")
 	public List<Account> getAccounts() {
 		return this.accountService.getAccounts();
-		
 	}
+	
+	@GetMapping("/accountSearch")
+	public List<Account> accountSearch(String firstName, String lastName, String accountNum){
+		return this.accountService.accountSearch(accountBuilder.firstName(firstName).lastName(lastName).accountNum(accountNum).accountBuild());
+	}
+
 	@Autowired
 	RestTemplateBuilder rtb;
 
@@ -43,8 +51,8 @@ public class AccountController {
 	}
 	@GetMapping("/randomNumber")
 	public String numberGenerator() {
-		String accountNumber = rtb.build().exchange("HTTP://localhost:8081/randomNumber", HttpMethod.GET,null,String.class).getBody();
-		return accountNumber;
+		String accountNum = rtb.build().exchange("HTTP://localhost:8081/randomNumber", HttpMethod.GET,null,String.class).getBody();
+		return accountNum;
 	}
 	@GetMapping("/prizeDraw/{accountNum}")
 	public String haveYouWon(@PathVariable String accountNum) {

@@ -8,9 +8,14 @@ import javax.persistence.Id;
 public class Account {
 
 	public Account(String firstName, String lastName) {
-		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
+	}
+	
+	public Account(String firstName, String lastName, String accountNum) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.accountNum = accountNum;
 	}
 
 	public Account() {
@@ -32,11 +37,11 @@ public class Account {
 		this.firstName = firstName;
 	}
 
-	public String getSecondName() {
+	public String getLastName() {
 		return lastName;
 	}
 
-	public void setSecondName(String surname) {
+	public void setLastName(String surname) {
 		this.lastName = surname;
 	}
 
