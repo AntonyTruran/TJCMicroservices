@@ -1,25 +1,23 @@
-package com.qa.demo.smokeTests;
+package com.qa.demo.repositoryTests;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import static org.junit.Assert.assertNotNull;
-import org.junit.Assert.*;
-
-import com.qa.demo.controllers.AccountController;
+import com.qa.demo.repository.AccountRepo;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class SmokeTests {
-	
+public class AccountRepoTest {
+
 	@Autowired
-	private AccountController accountController;
+	AccountRepo accountRepo;
 
-	@Test
+	@Test 
 	public void contextLoads() {
-		assertNotNull(accountController);
+		assertThat(accountRepo).isNotNull();
 	}
-
 }
