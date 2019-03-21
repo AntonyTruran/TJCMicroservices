@@ -28,10 +28,18 @@ public class NumGen6 implements INumGen {
 
 	@Override
 	public String genNum() {
-		int randNumber = new Random().nextInt(99999) + 10000;
-		accountString=addChar()+randNumber;
+		Boolean newCheck = true;
+		while (newCheck) {
+			accountString = addChar();
+			for (int i = 0; i < 5; i++) {
+				String digit = String.valueOf(ThreadLocalRandom.current().nextInt(0, 10));
+				accountString += digit;
+			}
+			newCheck = accountNums.contains(accountString);
+		}
 		return accountString;
 	}
+	
 	@Override
 	public String toString() {
 		genNum();
