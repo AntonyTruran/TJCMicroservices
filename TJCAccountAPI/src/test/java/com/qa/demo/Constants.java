@@ -18,28 +18,28 @@ public class Constants {
 	private final static Account BLANK_ACCOUNT = new Account();
 	private final static List<Account> accountList = new ArrayList<Account>();
 	
-	public static List<Account> getAccountlist() {
+	public List<Account> getAccountlist() {
 		return accountList;
 	}
-	public static Account getNotNullAccount() {
+	public Account getNotNullAccount() {
 		return NOT_NULL_ACCOUNT;
 	}
-	public static Account getTestAccount() {
+	public Account getTestAccount() {
 		return TEST_ACCOUNT;
 	}
-	public static String getTestFirstName() {
+	public String getTestFirstName() {
 		return TEST_FIRST_NAME;
 	}
-	public static String getTestLastName() {
+	public String getTestLastName() {
 		return TEST_LAST_NAME;
 	}
-	public static String getTestAccountNumber() {
+	public String getTestAccountNumber() {
 		return TEST_ACCOUNT_NUMBER;
 	}
-	public static String getNaString() {
+	public String getNaString() {
 		return NA_STRING;
 	}
-	public static Account getBlankAccount() {
+	public Account getBlankAccount() {
 		return BLANK_ACCOUNT;
 	}
 	

@@ -12,6 +12,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -23,7 +25,8 @@ import com.qa.demo.entities.AccountBuilder;
 import com.qa.demo.service.AccountService;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@WebMvcTest(AccountController.class)
+@AutoConfigureMockMvc
 public class AccountControllerTest {
 	
 	@InjectMocks
@@ -38,6 +41,10 @@ public class AccountControllerTest {
 	RestTemplateBuilder rtb;
 	@Mock
 	Constants constant;
+	@Before
+	public void setUp() {
+		constant = new Constants();
+	}
 	
 	@Test
 	public void testAccountCreation() {
