@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.qa.demo.entities.Account;
+import com.qa.demo.Constants;
 import com.qa.demo.entities.AccountBuilder;
 
 @RunWith(SpringRunner.class)
@@ -19,9 +19,6 @@ public class AccountBuilderTest {
 
 	@Autowired
 	private static AccountBuilder accountBuilder;
-
-	private Account notNullAccount = new Account("N/A", "N/A", "N/A");
-	private Account testAccount1 = new Account("First", "Last", "b19402");
 
 	@Before
 	public void getBuilder() {
@@ -34,16 +31,16 @@ public class AccountBuilderTest {
 		accountBuilder = AccountBuilder.getBuilder();
 		assertThat(accountBuilder).isNotNull();
 	}
-	
+
 	@Test
 	public void blankBuild() {
-		assertThat(accountBuilder.accountBuild().matches(notNullAccount));
+		assertThat(accountBuilder.accountBuild().matches(Constants.getNotNullAccount()));
 	}
-	
+
 	@Test
 	public void setterBuild() {
-		assertThat(accountBuilder.firstName("First").lastName("Last").accountNum("b19402").accountBuild()
-				.matches(testAccount1));
+		assertThat(accountBuilder.firstName(Constants.getTestFirstName()).lastName(Constants.getTestLastName())
+				.accountNum(Constants.getTestAccountNumber()).accountBuild().matches(Constants.getTestAccount()));
 
 	}
 
