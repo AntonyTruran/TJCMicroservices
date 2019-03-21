@@ -1,10 +1,5 @@
 package com.qa.demo;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.assertj.core.util.Arrays;
-
 import com.qa.demo.entities.Account;
 
 public class Constants {
@@ -12,17 +7,29 @@ public class Constants {
 	private final static String TEST_FIRST_NAME = "First";
 	private final static String TEST_LAST_NAME ="Last";
 	private final static String TEST_ACCOUNT_NUMBER ="b19402";
+	private final static String TEST_FIRST_NAME2 = "Furst";
+	private final static String TEST_LAST_NAME2 ="Lest";
+	private final static String TEST_ACCOUNT_NUMBER2 ="b68381";
 	private final static String NA_STRING = "N/A";
 	private final static Account NOT_NULL_ACCOUNT = new Account(NA_STRING, NA_STRING, NA_STRING);
 	private final static Account TEST_ACCOUNT = new Account(TEST_FIRST_NAME, TEST_LAST_NAME, TEST_ACCOUNT_NUMBER);
+	private final static Account TEST_ACCOUNT2 = new Account(TEST_FIRST_NAME2, TEST_LAST_NAME2, TEST_ACCOUNT_NUMBER2);
 	private final static Account BLANK_ACCOUNT = new Account();
-	private final static List<Account> accountList = new ArrayList<Account>();
-	
-	public static List<Account> getAccountlist() {
-		return accountList;
-	}
+
 	public static Account getNotNullAccount() {
 		return NOT_NULL_ACCOUNT;
+	}
+	public static String getTestFirstName2() {
+		return TEST_FIRST_NAME2;
+	}
+	public static String getTestLastName2() {
+		return TEST_LAST_NAME2;
+	}
+	public static String getTestAccountNumber2() {
+		return TEST_ACCOUNT_NUMBER2;
+	}
+	public static Account getTestAccount2() {
+		return TEST_ACCOUNT2;
 	}
 	public static Account getTestAccount() {
 		return TEST_ACCOUNT;

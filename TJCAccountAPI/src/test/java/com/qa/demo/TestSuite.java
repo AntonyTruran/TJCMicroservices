@@ -8,11 +8,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import com.qa.demo.controllerTests.AccountControllerTest;
 import com.qa.demo.entityTests.AccountTest;
 import com.qa.demo.repositoryTests.RepositoryTests;
-import com.qa.demo.serviceTests.ServiceTests;
+import com.qa.demo.serviceTests.AccountServiceTest;
 import com.qa.demo.smokeTests.SmokeTests;
 
 @RunWith(Suite.class)
-@SuiteClasses({ TjCaccountApiApplication.class, AccountTest.class, AccountControllerTest.class, SmokeTests.class, ServiceTests.class, RepositoryTests.class })
+@SuiteClasses({ TjCaccountApiApplication.class, AccountTest.class, AccountControllerTest.class, SmokeTests.class, AccountServiceTest.class, RepositoryTests.class })
 @SpringBootTest
 public class TestSuite {
 
