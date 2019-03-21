@@ -30,9 +30,10 @@ public class AccountController {
 	
 	@PostMapping("/createAccount")
 	
-	public void createAccount(@RequestBody Account account) {
+	public String createAccount(@RequestBody Account account) {
 		account.setAccountNum(numberGenerator());
 		this.accountService.createAccount(account);
+		return "created";
 	}
 	
 	@GetMapping("/getAllAccounts")
