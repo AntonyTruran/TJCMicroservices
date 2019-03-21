@@ -1,5 +1,10 @@
 package com.qa.demo.controllerTests;
 
+import static org.junit.Assert.assertEquals;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,6 +18,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.qa.demo.Constants;
 import com.qa.demo.controllers.AccountController;
+import com.qa.demo.entities.Account;
 import com.qa.demo.entities.AccountBuilder;
 import com.qa.demo.service.AccountService;
 
@@ -35,12 +41,15 @@ public class AccountControllerTest {
 	
 	@Test
 	public void testAccountCreation() {
-		Mockito.when(service.createAccount(constant.TEST_ACCOUNT_1).thenReturn(constant.CREATED_MESSAGE))
-		assertEquals(constant.CREATED_MESSAGE, service.createAccount(constant.TEST_ACCOUNT_1));
+		Mockito.when(accountController.createAccount(constant.getTestAccount()).thenReturn("created"));
+		assertEquals("created", accountController.createAccount(constant.getTestAccount()));
+		Mockito.verify(service).createAccount(constant.getTestAccount());
 	}
 	@Test
 	public void testGetAllAccounts() {
-		
+		List<Account> MOCKED_ACCOUNTS = new ArrayList<>();
+		MOCKED_ACCOUNTS.add(constant.getTestAccount());
+		Mockito.when(service.getAccounts()).thenReturn(MOCKED_ACCOUNTS);
+		assertEquals(MOCKED_ACCOUNTS, accountController.getAccounts());
 	}
-	
 }
