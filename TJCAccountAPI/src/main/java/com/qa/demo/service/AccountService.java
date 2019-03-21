@@ -1,6 +1,5 @@
 package com.qa.demo.service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -24,6 +23,10 @@ public class AccountService {
 
 	public List<Account> getAccounts() {
 		return this.accountRepo.findAll();
+	}
+	
+	public Account getLastAccount() {
+		return this.accountRepo.findAll().get((int) (this.accountRepo.count()-1));
 	}
 
 	public List<Account> accountSearch(Account account) {
