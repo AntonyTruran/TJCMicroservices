@@ -1,4 +1,4 @@
-package com.qa.demo.repository;
+package com.qa.demo.repositoryTests;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
