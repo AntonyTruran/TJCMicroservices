@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.qa.demo.AccountBuilder;
 import com.qa.demo.entities.Account;
+import com.qa.demo.entities.AccountBuilder;
 import com.qa.demo.service.AccountService;
 
 @RestController

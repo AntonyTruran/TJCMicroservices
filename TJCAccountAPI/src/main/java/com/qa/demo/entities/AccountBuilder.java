@@ -1,13 +1,11 @@
 
-package com.qa.demo;
+package com.qa.demo.entities;
 
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-
-import com.qa.demo.entities.Account;
 
 @Component
 @Scope("singleton")
