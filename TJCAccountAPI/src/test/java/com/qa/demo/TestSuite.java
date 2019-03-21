@@ -7,7 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import com.qa.demo.controllerTests.AccountControllerTest;
 import com.qa.demo.entityTests.AccountTest;
-import com.qa.demo.repository.RepositoryTests;
+import com.qa.demo.repositoryTests.RepositoryTests;
 import com.qa.demo.serviceTests.ServiceTests;
 import com.qa.demo.smokeTests.SmokeTests;
 

@@ -1,5 +1,10 @@
 package com.qa.demo;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.assertj.core.util.Arrays;
+
 import com.qa.demo.entities.Account;
 
 public class Constants {
@@ -10,8 +15,12 @@ public class Constants {
 	private final static String NA_STRING = "N/A";
 	private final static Account NOT_NULL_ACCOUNT = new Account(NA_STRING, NA_STRING, NA_STRING);
 	private final static Account TEST_ACCOUNT = new Account(TEST_FIRST_NAME, TEST_LAST_NAME, TEST_ACCOUNT_NUMBER);
-	private static Account BLANK_ACCOUNT = new Account();
+	private final static Account BLANK_ACCOUNT = new Account();
+	private final static List<Account> accountList = new ArrayList<Account>();
 	
+	public static List<Account> getAccountlist() {
+		return accountList;
+	}
 	public static Account getNotNullAccount() {
 		return NOT_NULL_ACCOUNT;
 	}
