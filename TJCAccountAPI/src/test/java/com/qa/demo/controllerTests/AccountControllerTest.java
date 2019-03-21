@@ -64,7 +64,7 @@ public class AccountControllerTest {
 	@Test
 	public void testAccountCreation() throws Exception {
 		String postValue = OBJECT_MAPPER.writeValueAsString(constant.getTestAccount());
-		when(service.createAccount(TEST_ACCOUNT)).thenReturn(TEST_ACCOUNT);
+		when(service.createAccount(TEST_ACCOUNT));
 		mockMvc.perform(MockMvcRequestBuilders.post("/createAccount").contentType(MediaType.APPLICATION_JSON)
 				.content(postValue)).andExpect(status().isCreated()).andDo(print()).andReturn();
 		Mockito.verify(service).createAccount(constant.getTestAccount());
