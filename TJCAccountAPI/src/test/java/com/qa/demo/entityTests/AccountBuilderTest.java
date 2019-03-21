@@ -22,13 +22,13 @@ public class AccountBuilderTest {
 
 	@Before
 	public void getBuilder() {
-		accountBuilder = AccountBuilder.getBuilder();
+		accountBuilder = accountBuilder.getBuilder();
 		assertThat(accountBuilder).isNotNull();
 	}
 
 	@After
 	public void resetBuilder() {
-		accountBuilder = AccountBuilder.getBuilder();
+		accountBuilder = accountBuilder.getBuilder();
 		assertThat(accountBuilder).isNotNull();
 	}
 

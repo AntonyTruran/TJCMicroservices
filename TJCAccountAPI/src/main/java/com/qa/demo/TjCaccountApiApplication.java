@@ -8,8 +8,9 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @EnableWebMvc
 public class TjCaccountApiApplication {
 
-	public static void main(String[] args) {
+	public static String main(String[] args) {
 		SpringApplication.run(TjCaccountApiApplication.class, args);
+		return("Program runs successfully");
 	}
 
 }

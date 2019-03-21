@@ -43,7 +43,6 @@ public class AccountController {
 	}
 	
 	@GetMapping("/accountSearch")
-
 	public List<Account> accountSearch(String firstName, String lastName, String accountNum){
 		return this.accountService.accountSearch(accountBuilder.firstName(firstName).lastName(lastName).accountNum(accountNum).accountBuild());
 	}

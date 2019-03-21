@@ -56,7 +56,7 @@ public class Constants {
 		return TEST_ACCOUNT_NUMBER;
 	}
 
-	public String getNaString() {
+	public static String getNaString() {
 		return NA_STRING;
 	}
 
