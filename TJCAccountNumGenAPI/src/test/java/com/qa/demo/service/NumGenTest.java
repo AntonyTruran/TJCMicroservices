@@ -41,19 +41,16 @@ public class NumGenTest {
 	
 	@Test
 	public void gen6LengthTest() {
-		System.out.println(gen6.genNum());
 		assertEquals(6, gen6.genNum().length());
 	}
 	
 	@Test
 	public void gen8LengthTest() {
-		System.out.println(gen8.genNum());
 		assertEquals(8, gen8.genNum().length());
 	}
 	
 	@Test
 	public void gen10LengthTest() {
-		System.out.println(gen10.genNum());
 		assertEquals(10, gen10.genNum().length());
 	}
 }
