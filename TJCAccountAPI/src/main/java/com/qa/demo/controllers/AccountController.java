@@ -33,7 +33,7 @@ public class AccountController {
 	public String createAccount(@RequestBody Account account) {
 		account.setAccountNum(numberGenerator());
 		this.accountService.createAccount(account);
-		return "created";
+		return "account created";
 	}
 	
 	@GetMapping("/getAllAccounts")

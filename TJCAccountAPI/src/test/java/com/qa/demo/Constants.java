@@ -17,6 +17,7 @@ public class Constants {
 	private final static Account TEST_ACCOUNT = new Account(TEST_FIRST_NAME, TEST_LAST_NAME, TEST_ACCOUNT_NUMBER);
 	private final static Account BLANK_ACCOUNT = new Account();
 	private final static List<Account> accountList = new ArrayList<Account>();
+	private static final String CREATION_RETURN = "account created";
 	
 	public List<Account> getAccountlist() {
 		return accountList;
@@ -41,6 +42,9 @@ public class Constants {
 	}
 	public Account getBlankAccount() {
 		return BLANK_ACCOUNT;
+	}
+	public String getCreationReturn() {
+		return CREATION_RETURN;
 	}
 	
 
