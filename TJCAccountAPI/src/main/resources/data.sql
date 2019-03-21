@@ -1,0 +1,1 @@
+INSERT INTO Account (id, account_num,first_name, last_name) VALUES (1,'c37739','James', 'Ingram'); 
