@@ -1,5 +1,8 @@
 package com.qa.demo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.qa.demo.entities.Account;
 
 public class Constants {
@@ -15,7 +18,12 @@ public class Constants {
 	private final static Account TEST_ACCOUNT = new Account(TEST_FIRST_NAME, TEST_LAST_NAME, TEST_ACCOUNT_NUMBER);
 	private final static Account TEST_ACCOUNT2 = new Account(TEST_FIRST_NAME2, TEST_LAST_NAME2, TEST_ACCOUNT_NUMBER2);
 	private final static Account BLANK_ACCOUNT = new Account();
-
+	private final static List<Account> accountList = new ArrayList<Account>();
+	private static final String CREATION_RETURN = "account created";
+	
+	public List<Account> getAccountlist() {
+		return accountList;
+	}
 	public static String getTestFirstName2() {
 		return TEST_FIRST_NAME2;
 	}
@@ -55,7 +63,10 @@ public class Constants {
 	public static Account getBlankAccount() {
 		return BLANK_ACCOUNT;
 	}
-
+	public String getCreationReturn() {
+		return CREATION_RETURN;
+	}
+	
 	public static Account getNotNullAccount() {
 		return NOT_NULL_ACCOUNT;
 	}
