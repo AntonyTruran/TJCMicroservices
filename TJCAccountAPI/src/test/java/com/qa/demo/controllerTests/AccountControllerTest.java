@@ -4,6 +4,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
+import static org.mockito.ArgumentMatchers.*;
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -92,10 +94,8 @@ public class AccountControllerTest {
 	Account account = new Account("first", "last", "b12345");
 	MOCKED_ACCOUNTS.add(account);
 	
-	//Mockito.when(service.accountSearch(account)).thenReturn(MOCKED_ACCOUNTS.stream().filter(x -> x.matches(account)).collect(Collectors.toList()));	
-	Mockito.when(service.accountSearch(account)).thenReturn(MOCKED_ACCOUNTS);	
-	
-	MvcResult result = mockMvc.perform(get("/accountSearch")).andExpect(status().isOk()).andReturn();
+	Mockito.when(service.accountSearch((Account)notNull())).thenReturn(MOCKED_ACCOUNTS.stream().filter(x -> x.matches(account)).collect(Collectors.toList()));	
+	MvcResult result = mockMvc.perform(get("/accountSearch").param("firstName", "first").param("lastName", "last").param("accountNum","b12345")).andExpect(status().isOk()).andReturn();
 	String content = result.getResponse().getContentAsString();
 	TypeReference<List<Account>> mapType = new TypeReference<List<Account>>() {};
 	List<Account> list = objectMapper.readValue(content, mapType);

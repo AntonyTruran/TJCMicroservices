@@ -1,6 +1,5 @@
 package com.qa.demo.controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,62 +19,60 @@ import com.qa.demo.service.AccountService;
 @RestController
 @CrossOrigin
 public class AccountController {
-	
+
 	private AccountService accountService;
-	private AccountBuilder accountBuilder;
-	
-	public AccountController(AccountService accountService, AccountBuilder accountBuilder) {
+
+	public AccountController(AccountService accountService) {
 		this.accountService = accountService;
-		this.accountBuilder = accountBuilder;
 	}
-	
+
 	@PostMapping("/createAccount")
-	
+
 	public String createAccount(@RequestBody Account account) {
 		account.setAccountNum(numberGenerator());
 		this.accountService.createAccount(account);
 		return "account created";
 	}
-	
+
 	@GetMapping("/getAllAccounts")
-	
 	public List<Account> getAccounts() {
 		return this.accountService.getAccounts();
 	}
+
 	@GetMapping("/getLastAccountName")
 	public String getLastAccountName() {
 		return accountService.getLastAccount().getFirstName();
 	}
+
 	@GetMapping("/getLastAccountNumber")
 	public String getLastAccountNumber() {
 		return accountService.getLastAccount().getAccountNum();
 	}
-	
+
 	@GetMapping("/accountSearch")
-	public List<Account> accountSearch(/*String firstName, String lastName, String accountNum*/){
-		
-		Account account = new Account("first", "last", "b12345");
-		List<Account> returnList = new ArrayList<Account>();
-		returnList.add(account);
-	    //return returnList;
-	    //return this.accountService.accountSearch(accountBuilder.firstName(firstName).lastName(lastName).accountNum(accountNum).accountBuild());
+	public List<Account> accountSearch(String firstName, String lastName, String accountNum) {
+		Account account = AccountBuilder.getBuilder().firstName(firstName).lastName(lastName).accountNum(accountNum).accountBuild();
 		return this.accountService.accountSearch(account);
-  }
+	}
 
 	@Autowired
 	RestTemplateBuilder rtb;
 
 	@GetMapping("/hello")
 	public String hello() {
-		return rtb.build().exchange("HTTP://localhost:8081/hello", HttpMethod.GET,null,String.class).getBody();
+		return rtb.build().exchange("HTTP://localhost:8081/hello", HttpMethod.GET, null, String.class).getBody();
 	}
+
 	@GetMapping("/randomNumber")
 	public String numberGenerator() {
-		String accountNum = rtb.build().exchange("HTTP://localhost:8081/randomNumber", HttpMethod.GET,null,String.class).getBody();
+		String accountNum = rtb.build()
+				.exchange("HTTP://localhost:8081/randomNumber", HttpMethod.GET, null, String.class).getBody();
 		return accountNum;
 	}
+
 	@GetMapping("/prizeDraw/{accountNum}")
 	public String haveYouWon(@PathVariable String accountNum) {
-		return rtb.build().exchange("HTTP://localhost:8082/prizeDraw/" + accountNum , HttpMethod.GET,null,String.class).getBody();
+		return rtb.build().exchange("HTTP://localhost:8082/prizeDraw/" + accountNum, HttpMethod.GET, null, String.class)
+				.getBody();
 	}
 }
