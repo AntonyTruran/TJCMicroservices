@@ -40,7 +40,7 @@ public class AccountBuilder {
 		return account;
 	}
 
-	public AccountBuilder getBuilder() {
+	public static AccountBuilder getBuilder() {
 		if (accountBuilder == null) {
 			accountBuilder = new AccountBuilder();
 		}

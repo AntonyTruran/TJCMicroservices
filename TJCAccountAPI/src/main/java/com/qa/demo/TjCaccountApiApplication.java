@@ -18,7 +18,5 @@ public class TjCaccountApiApplication {
 	public static void main(String[] args) {
 		ApplicationContext ac = SpringApplication.run(TjCaccountApiApplication.class, args);
 		//JmsTemplate jmsT = ac.getBean(JmsTemplate.class);
-		//jmsT.convertAndSend("Jimmy is a weapon", new Account("Jimmy", "Weapon"));
-
 	}
 }
