@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import * as Constants from './Constants';
 import './App.css';
 import axios from 'axios';
 import AccountCreated from './AccountCreated';
@@ -16,8 +16,8 @@ class Login extends Component {
     this.setLName = this.setLName.bind(this);
   }
 
-  createAccount = (e) => {
-    axios.post('http://localhost:8080/createAccount', {
+    createAccount = (e) => {
+        axios.post(Constants.CREATE_ACCOUNT, {
       "firstName": this.state.firstName,
       "lastName": this.state.lastName
     })
@@ -45,9 +45,7 @@ class Login extends Component {
     return (
 
       <div className="App">
-        <Router>
-
-          <form action="/AccountCreated.js">
+          <form>
             <h4>
               First Name:
               </h4>
@@ -57,13 +55,11 @@ class Login extends Component {
               Last Name:
               </h4>
             <input id="lastName" type="text" onChange={this.setLName} name="Last Name"></input>
-            <br></br>
-            <input type='submit' onClick={this.createAccount} value="Create Account"></input>
+                    <br></br>
+                    <Link to="/AccountCreated">
+                    <button type='submit' onClick={this.createAccount}>Create Account</button></Link>
+
           </form>
-
-          <Route path="/AccountedCreated.js" component={AccountCreated} />
-        </Router>
-
       </div>
     );
   }

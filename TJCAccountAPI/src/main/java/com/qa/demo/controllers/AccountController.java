@@ -42,9 +42,17 @@ public class AccountController {
 	public List<Account> getAccounts() {
 		return this.accountService.getAccounts();
 	}
+	@GetMapping("/getLastAccountName")
+	public String getLastAccountName() {
+		return accountService.getLastAccount().getFirstName();
+	}
+	@GetMapping("/getLastAccountNumber")
+	public String getLastAccountNumber() {
+		return accountService.getLastAccount().getAccountNum();
+	}
 	
-	@GetMapping("/accountSearch")
-	public List<Account> accountSearch(/*String firstName, String lastName, String accountNum*/){
+	@GetMapping("/accountSearch2")
+	public List<Account> accountSearch2(/*String firstName, String lastName, String accountNum*/){
 		
 		Account account = new Account("first", "last", "b12345");
 		List<Account> returnList = new ArrayList<Account>();
@@ -53,6 +61,11 @@ public class AccountController {
 		
 	    //return this.accountService.accountSearch(accountBuilder.firstName(firstName).lastName(lastName).accountNum(accountNum).accountBuild());
 		//return this.accountService.accountSearch(account);
+  }
+  
+  @GetMapping("/accountSearch")
+	public List<Account> accountSearch(String firstName, String lastName, String accountNum){
+		return this.accountService.accountSearch(accountBuilder.firstName(firstName).lastName(lastName).accountNum(accountNum).accountBuild());
 	}
 
 	@Autowired

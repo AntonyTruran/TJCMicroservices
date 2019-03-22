@@ -29,15 +29,18 @@ public class NumGen10 implements INumGen {
 
 	@Override
 	public String genNum() {
-		String number = "";
-		int randNumber;
-		for (int i=1; i<10;i++) {
-			 randNumber = new Random().nextInt(9) + 0;
-			number += randNumber;
+		Boolean newCheck = true;
+		while (newCheck) {
+			accountString = addChar();
+			for (int i = 0; i < 9; i++) {
+				String digit = String.valueOf(ThreadLocalRandom.current().nextInt(0, 10));
+				accountString += digit;
+			}
+			newCheck = accountNums.contains(accountString);
 		}
-		accountString=addChar()+number;
 		return accountString;
 	}
+	
 	@Override
 	public String toString() {
 		genNum();

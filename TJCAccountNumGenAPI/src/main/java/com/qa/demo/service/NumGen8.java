@@ -6,7 +6,7 @@ import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class NumGen8 implements INumGen {
-//	private List<String> accountNums = new ArrayList<String>();
+	private List<String> accountNums = new ArrayList<String>();
 	private String accountString = " failed";
 
 	public String addChar() {
@@ -29,10 +29,18 @@ public class NumGen8 implements INumGen {
 
 	@Override
 	public String genNum() {
-		int randNumber = new Random().nextInt(9999999) + 1000000;
-		accountString=addChar()+randNumber;
+		Boolean newCheck = true;
+		while (newCheck) {
+			accountString = addChar();
+			for (int i = 0; i < 7; i++) {
+				String digit = String.valueOf(ThreadLocalRandom.current().nextInt(0, 10));
+				accountString += digit;
+			}
+			newCheck = accountNums.contains(accountString);
+		}
 		return accountString;
 	}
+	
 	@Override
 	public String toString() {
 		genNum();
