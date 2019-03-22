@@ -3,6 +3,9 @@ package com.qa.demo;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+
 import com.qa.demo.entities.Account;
 
 public class Constants {
@@ -20,6 +23,8 @@ public class Constants {
 	private final static Account BLANK_ACCOUNT = new Account();
 	private final static List<Account> accountList = new ArrayList<Account>();
 	private static final String CREATION_RETURN = "account created";
+	private static final String NUM_GEN = "HTTP://localhost:8081/randomNumber";
+	private static final ResponseEntity<String> MOCK_GET_RESPONSE = new ResponseEntity<>("b19402",  HttpStatus.OK);
 	
 	public List<Account> getAccountlist() {
 		return accountList;
@@ -69,6 +74,12 @@ public class Constants {
 	
 	public static Account getNotNullAccount() {
 		return NOT_NULL_ACCOUNT;
+	}
+	public static String getNumGen() {
+		return NUM_GEN;
+	}
+	public static ResponseEntity<String> getMockGetResponse() {
+		return MOCK_GET_RESPONSE;
 	}
 
 }
