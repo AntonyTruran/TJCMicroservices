@@ -51,22 +51,16 @@ public class AccountController {
 		return accountService.getLastAccount().getAccountNum();
 	}
 	
-	@GetMapping("/accountSearch2")
-	public List<Account> accountSearch2(/*String firstName, String lastName, String accountNum*/){
+	@GetMapping("/accountSearch")
+	public List<Account> accountSearch(/*String firstName, String lastName, String accountNum*/){
 		
 		Account account = new Account("first", "last", "b12345");
 		List<Account> returnList = new ArrayList<Account>();
 		returnList.add(account);
-	    return returnList;
-		
+	    //return returnList;
 	    //return this.accountService.accountSearch(accountBuilder.firstName(firstName).lastName(lastName).accountNum(accountNum).accountBuild());
-		//return this.accountService.accountSearch(account);
+		return this.accountService.accountSearch(account);
   }
-  
-  @GetMapping("/accountSearch")
-	public List<Account> accountSearch(String firstName, String lastName, String accountNum){
-		return this.accountService.accountSearch(accountBuilder.firstName(firstName).lastName(lastName).accountNum(accountNum).accountBuild());
-	}
 
 	@Autowired
 	RestTemplateBuilder rtb;
