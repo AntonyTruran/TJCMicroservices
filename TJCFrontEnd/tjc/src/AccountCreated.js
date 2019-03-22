@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 import * as Constants from './Constants';
 import Login from './Login.js';
+import PrizePage from './PrizePage.js';
 
 class AccountCreated extends Component {
     constructor(props) {
@@ -28,13 +30,16 @@ class AccountCreated extends Component {
         <div wait={5000}>
 
             <div>
-                <p>{'Hello '}
-                    {this.state && this.state.Name && this.state.Name}
-                </p>
+                <p>Hello   {this.state.Name}  </p>
             </div>
             <pre> Your Account Number Is: {this.state.Number}</pre>
-            <pre>Enter your Account Number<br/> here to see if you have won<br/> a Prize!</pre>
-            <input type="text" onChange={this.onChange} placeholder="Enter Account Number"/>
+            <pre>Click here to see if you have won<br/> a Prize!</pre>
+            <form>
+              <br></br>
+              <Link to="/prizePage">
+              <button type='submit' onClick={this.createAccount}>Claim Prize</button>
+                </Link>
+            </form>
       </div>
     );
   }

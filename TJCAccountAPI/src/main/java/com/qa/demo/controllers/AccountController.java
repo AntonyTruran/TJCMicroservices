@@ -80,8 +80,9 @@ public class AccountController {
 		String accountNum = rtb.build().exchange("HTTP://localhost:8081/randomNumber", HttpMethod.GET,null,String.class).getBody();
 		return accountNum;
 	}
-	@GetMapping("/prizeDraw/{accountNum}")
-	public String haveYouWon(@PathVariable String accountNum) {
+	@GetMapping("/prizeDraw/")
+	public String haveYouWon() {
+		String accountNum = accountService.getLastAccount().getAccountNum();
 		return rtb.build().exchange("HTTP://localhost:8082/prizeDraw/" + accountNum , HttpMethod.GET,null,String.class).getBody();
 	}
 }

@@ -71,9 +71,9 @@ public class AccountControllerTest {
 	@Ignore
 	@Test
 	public void testAccountCreation() {
-		String postValue = OBJECT_MAPPER.writeValueAsString(Constants.getTestAccount());
-		Mockito.when(service.createAccount(TEST_ACCOUNT)).thenDo();
-		mockMvc.perform(MockMvcRequestBuilders.post("/createAccount").param("account", postValue)).andDo(null);
+		//String postValue = OBJECT_MAPPER.writeValueAsString(Constants.getTestAccount());
+		//Mockito.when(service.createAccount(TEST_ACCOUNT)).thenDo();
+		//mockMvc.perform(MockMvcRequestBuilders.post("/createAccount").param("account", postValue)).andDo(null);
 	}
 
 	@Test
