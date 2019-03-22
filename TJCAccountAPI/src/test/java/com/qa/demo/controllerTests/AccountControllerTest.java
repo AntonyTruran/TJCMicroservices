@@ -1,5 +1,6 @@
 package com.qa.demo.controllerTests;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
@@ -11,6 +12,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.junit.Before;
 import org.junit.Ignore;
@@ -29,8 +31,12 @@ import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
+import org.springframework.test.web.servlet.ResultMatcher;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.util.MultiValueMap;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qa.demo.Constants;
 import com.qa.demo.controllers.AccountController;
@@ -62,33 +68,37 @@ public class AccountControllerTest {
 	public void setUp() {
 	}
 
-	/*
-	 * @Ignore
-	 * 
-	 * @Test public void testAccountCreation() { String postValue =
-	 * OBJECT_MAPPER.writeValueAsString(Constants.getTestAccount());
-	 * when(service.createAccount(TEST_ACCOUNT));
-	 * mockMvc.perform(MockMvcRequestBuilders.post("/createAccount").contentType(
-	 * MediaType.APPLICATION_JSON)
-	 * .content(postValue)).andExpect(status().isCreated()).andDo(print()).andReturn
-	 * (); Mockito.verify(service).createAccount(constant.getTestAccount()); }
-	 */
+	@Ignore
+	@Test
+	public void testAccountCreation() {
+		String postValue = OBJECT_MAPPER.writeValueAsString(Constants.getTestAccount());
+		Mockito.when(service.createAccount(TEST_ACCOUNT)).thenDo();
+		mockMvc.perform(MockMvcRequestBuilders.post("/createAccount").param("account", postValue)).andDo(null);
+	}
 
 	@Test
 	public void testGetAllAccounts() throws Exception {
 		List<Account> MOCKED_ACCOUNTS = new ArrayList<Account>();
 		MOCKED_ACCOUNTS.add(Constants.getTestAccount());
 		when(service.getAccounts()).thenReturn(MOCKED_ACCOUNTS);
-		mockMvc.perform(get("/getAllAccounts")).andExpect(content().string(containsString("Vodka somthing")));
+		mockMvc.perform(get("/getAllAccounts")).andExpect(content().string(containsString("First")));
 	}
 
 	@Test
-	public void testAccountSearch() {
-		List<Account> MOCKED_ACCOUNTS = new ArrayList<Account>();
-		MOCKED_ACCOUNTS.add(TEST_ACCOUNT);
-		Mockito.when(service.accountSearch(TEST_ACCOUNT)).thenAnswer((Answer<?>) invocation -> {
-		;
-		return invocation;});
-		
-}
+	public void testAccountSearch() throws Exception {
+	ObjectMapper objectMapper = new ObjectMapper();
+	List<Account> MOCKED_ACCOUNTS = new ArrayList<Account>();
+	MOCKED_ACCOUNTS.add(Constants.getTestAccount());
+	Account account = new Account("first", "last", "b12345");
+	MOCKED_ACCOUNTS.add(account);
+	
+	//Mockito.when(service.accountSearch(account)).thenReturn(MOCKED_ACCOUNTS.stream().filter(x -> x.matches(account)).collect(Collectors.toList()));	
+	Mockito.when(service.accountSearch(account)).thenReturn(MOCKED_ACCOUNTS);	
+	
+	MvcResult result = mockMvc.perform(get("/accountSearch")).andExpect(status().isOk()).andReturn();
+	String content = result.getResponse().getContentAsString();
+	TypeReference<List<Account>> mapType = new TypeReference<List<Account>>() {};
+	List<Account> list = objectMapper.readValue(content, mapType);
+	assertThat(list.stream().filter(x->x.matches(account)).collect(Collectors.toList()).get(0).matches(account));
+	}
 }
