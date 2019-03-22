@@ -31,7 +31,7 @@ public class AccountController {
 	public String createAccount(@RequestBody Account account) {
 		account.setAccountNum(numberGenerator());
 		this.accountService.createAccount(account);
-		return "account created";
+		return "Account created";
 	}
 
 	@GetMapping("/getAllAccounts")
@@ -58,10 +58,6 @@ public class AccountController {
 	@Autowired
 	RestTemplateBuilder rtb;
 
-	@GetMapping("/hello")
-	public String hello() {
-		return rtb.build().exchange("HTTP://localhost:8081/hello", HttpMethod.GET, null, String.class).getBody();
-	}
 
 	@GetMapping("/randomNumber")
 	public String numberGenerator() {
