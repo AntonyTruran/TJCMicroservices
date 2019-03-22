@@ -14,15 +14,14 @@ import com.qa.demo.repository.AccountRepo;
 public class AccountService {
 
 	private AccountRepo accountRepo;
-	private JmsTemplate jmsTemplate;
 
 	public AccountService(AccountRepo accountRepo) {
 		this.accountRepo = accountRepo;
 	}
 
-	public void createAccount(Account account) {
+	public String createAccount(Account account) {
 		this.accountRepo.save(account);
-		
+		return "Account created";	
 	}
 
 	public List<Account> getAccounts() {
