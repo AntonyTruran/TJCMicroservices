@@ -3,7 +3,6 @@ package com.qa.demo.entities;
 
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -41,7 +40,7 @@ public class AccountBuilder {
 		return account;
 	}
 
-	public static AccountBuilder getBuilder() {
+	public AccountBuilder getBuilder() {
 		if (accountBuilder == null) {
 			accountBuilder = new AccountBuilder();
 		}

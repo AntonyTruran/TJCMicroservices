@@ -7,5 +7,4 @@ import com.qa.demo.entities.Account;
 
 @Repository
 public interface AccountRepo extends JpaRepository<Account, Long> {
-
 }
