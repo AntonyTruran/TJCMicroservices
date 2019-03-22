@@ -1,12 +1,12 @@
-
-package com.qa.demo;
-
+  package com.qa.demo;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.qa.demo.ApplicationMainTest;
 import com.qa.demo.controllerTests.AccountControllerTest;
+import com.qa.demo.controllerTests.AccountRestTemplateTest;
 import com.qa.demo.entityTests.AccountBuilderTest;
 import com.qa.demo.entityTests.AccountTest;
 import com.qa.demo.repositoryTests.AccountRepoTest;
@@ -16,7 +16,7 @@ import com.qa.demo.smokeTests.SmokeTest;
 @RunWith(Suite.class)
 
 @SuiteClasses({AccountTest.class, SmokeTest.class, AccountServiceTest.class,
-		AccountBuilderTest.class, AccountRepoTest.class, ApplicationMainTest.class, AccountControllerTest.class })
+		AccountBuilderTest.class, AccountRepoTest.class, ApplicationMainTest.class, AccountControllerTest.class, AccountRestTemplateTest.class})
 
 @SpringBootTest
 public class TestSuite {
